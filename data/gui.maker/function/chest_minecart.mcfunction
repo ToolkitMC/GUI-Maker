@@ -1,0 +1,2 @@
+$function gui.maker:worker/gui/entity/summon/1 {"GUI_ID":$(GUI_ID),PAGE:$(PAGE)}
+$tellraw @s [{"text":"Command run >> /function gui.maker:worker/gui/entity/summon/1 {GUI_ID:$(GUI_ID),page_number:$(PAGE)}"},{"bold":false,"clickEvent":{"action":"copy_to_clipboard","value":"/function gui.maker:worker/gui/entity/summon/1 {GUI_ID:$(GUI_ID),page_number:$(PAGE)}"},"color":"gray","hoverEvent":{"action":"show_text","value":[{"text":"click to copy."}]},"italic":true,"text":"\nclick to copy to clipboard."}]

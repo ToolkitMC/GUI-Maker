@@ -1,0 +1,21 @@
+tellraw @s {"text":"-------------------------------","color":"#FFDF8D"}
+tellraw @s ["",{"text":"[GUI MAKER]","bold":true,"color":"#3FFEFE"},{"text":" B","bold":true,"italic":true,"color":"#3FFEFE"},{"text":"U","bold":true,"italic":true,"color":"#4AF8FE"},{"text":"T","bold":true,"italic":true,"color":"#55F2FE"},{"text":"T","bold":true,"italic":true,"color":"#61ECFE"},{"text":"O","bold":true,"italic":true,"color":"#6CE6FE"},{"text":"N ","bold":true,"italic":true,"color":"#78E0FE"},{"text":"C","bold":true,"italic":true,"color":"#83DAFE"},{"text":"O","bold":true,"italic":true,"color":"#8FD4FE"},{"text":"N","bold":true,"italic":true,"color":"#9ACEFE"},{"text":"F","bold":true,"italic":true,"color":"#A6C8FE"},{"text":"I","bold":true,"italic":true,"color":"#B1C2FE"},{"text":"G","bold":true,"italic":true,"color":"#BDBDFF"}]
+
+# Info
+$tellraw @s ["",{"text":"I","color":"#B1FFF0"},{"text":"t","color":"#C3E9F5"},{"text":"e","color":"#D6D3FA"},{"text":"m: $(id)","color":"#E9BDFF"}]
+$tellraw @s ["",{"text":"S","color":"#64E6CD"},{"text":"l","color":"#8BEEC7"},{"text":"o","color":"#B3F6C2"},{"text":"t: ","color":"#DBFFBD"},{"text":"$(Slot)b","color":"#B1FFF0"}]
+$tellraw @s ["",{"text":"r","color":"#94E664"},{"text":"u","color":"#99E86B"},{"text":"n: ","color":"#9FEA72"},{"text":"$(run)","color":"#D5FCB5"}]
+$tellraw @s ["",{"text":"i","color":"#75FF00"},{"text":"t","color":"#7EFF11"},{"text":"e","color":"#88FF23"},{"text":"m ","color":"#91FF34"},{"text":"m","color":"#9BFF46"},{"text":"o","color":"#A4FE57"},{"text":"d","color":"#AEFF69"},{"text":"i","color":"#B7FF7A"},{"text":"f","color":"#C1FF8C"},{"text":"i","color":"#CAFF9D"},{"text":"e","color":"#D4FFAF"},{"text":"r","color":"#DDFFC0"},{"text":": ","color":"#E7FFD2"},{"text":"$(item_modifier)","color":"#75FF00"}]
+$tellraw @s ["",{"text":"C","color":"#FF8888"},{"text":"h","color":"#FF9088"},{"text":"a","color":"#FF9888"},{"text":"n","color":"#FFA088"},{"text":"g","color":"#FFA988"},{"text":"e ","color":"#FFB188"},{"text":"T","color":"#FFB988"},{"text":"o","color":"#FFC188"},{"text":":","color":"#FFCA88"},{"text":"\n"},{"text":"G","color":"#FF8888"},{"text":"U","color":"#FF9388"},{"text":"I","color":"#FF9E88"},{"text":"_","color":"#FFA988"},{"text":"I","color":"#FFB488"},{"text":"D","color":"#FFBF88"},{"text":":  $(change_gui)","color":"#FFCA88"},{"text":"\n"},{"text":"P","color":"#FF8888"},{"text":"A","color":"#FF9888"},{"text":"G","color":"#FFA988"},{"text":"E","color":"#FFB988"},{"text":": $(change_page)","color":"#FFCA88"}]
+tellraw @s ["",{"text":"PAGE NAME ","color":"#3FFEFE"},{"text":"\u25b6"}]
+$tellraw @s $(page_name)
+
+# Actions:
+$tellraw @s ["",{"text":"[CHANGE VALUES]","bold":true,"color":"#FF8888","clickEvent":{"action":"suggest_command","value":"/function gui.maker:maker/gui/edit_page/tellraw/set_nbt {\"run\":\"$(run)\",\"item_modifier\":\"$(item_modifier)\",\"change_to_gui\":\"$(change_gui)\",\"change_to_page\":\"$(change_page)\",\"gui_id\":\"$(GUI_ID)\",\"page\":$(PAGE),\"slot\":\"$(Slot)\",\"sound\":\"$(sound)\"}"}}]
+$tellraw @s ["",{"text":"[CHANGE PAGE NAME]","bold":true,"color":"#3FFEFE","clickEvent":{"action":"suggest_command","value":"/function gui.maker:maker/gui/change_name/1 {page_name:'',gui_id:\"$(GUI_ID)\",page:$(PAGE)}"}}]
+$tellraw @s {"text":"[DELETE PAGE]","color":"red","clickEvent":{"action":"suggest_command","value":"/function gui.maker:maker/gui/delete_page/1 {gui_id:$(GUI_ID),page:$(PAGE)}"},"hoverEvent":{"action":"show_text","contents":"Geri dönüşü yok! Sayfayı silmek için ENTER'a bas."}}
+$tellraw @s {"text":"[DELETE GUI]","color":"red","clickEvent":{"action":"suggest_command","value":"/function gui.maker:maker/gui/delete_gui/1 {gui_id:$(GUI_ID)}"},"hoverEvent":{"action":"show_text","contents":"Geri dönüşü yok! Tüm GUI ve sayfaları silmek için ENTER'a bas."}}
+tellraw @s {"text":"-------------------------------","color":"#FFDF8D"}
+
+# UI Temizliği (Daha güvenli kill komutu)
+execute as @e[type=chest_minecart,tag=gm.gui.ui,distance=..2,limit=1,sort=nearest] run kill @s

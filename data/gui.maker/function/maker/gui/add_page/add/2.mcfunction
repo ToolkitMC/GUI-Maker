@@ -1,4 +1,4 @@
-$data modify storage barden:gui.all GUI[{GUI_ID:$(GUI_ID),username:$(username)}].PAGES append value {page_number:$(page_number),page_name:'[{"text":"$(username)\'s page $(page_number)"}]'}
+$data modify storage barden:gui.all GUI[{GUI_ID:$(GUI_ID),username:$(username)}].PAGES append value {page_number:$(page_number),page_name:[{"text":"$(username)\'s page $(page_number)"}]}
 $data modify storage barden:gui.all GUI[{GUI_ID:$(GUI_ID),username:$(username)}].PAGES[{page_number:$(page_number)}].layout set from block ~ ~-1 ~ Items
 $data modify storage barden:gui.all GUI[{GUI_ID:$(GUI_ID),username:$(username)}].PAGES[{page_number:$(page_number)}].layout[].components."minecraft:custom_data"."gm.Button" set value 1
 $data modify storage barden:gui.all GUI[{GUI_ID:$(GUI_ID),username:$(username)}].PAGES[{page_number:$(page_number)}].layout[].components."minecraft:custom_data".BUTTON_INFO."run" set value "function gui.maker:extra/empty"

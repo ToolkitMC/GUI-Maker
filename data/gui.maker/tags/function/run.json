@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "gui.maker:click_sound"
+    "gui.maker:username",
+    "gui.maker:info"
  ]
 }

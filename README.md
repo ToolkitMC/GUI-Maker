@@ -1,4 +1,4 @@
-<h1>🧩 Minecart GUI Maker – Global Fork</h1>
+<h1>🧩 GUI Maker – Global Fork (Minecraft JE)</h1>
 
 <p>
 <strong>✔ Minecraft 1.21.5+ Supported</strong>
